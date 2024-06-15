@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+ <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<title>Projects - HOPE KOKENO CBO</title>
+<link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
+<style>
+  body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+  }
+  .container {
+    max-width: 1170px;
+    margin: auto;
+    padding: 0 15px;
+  }
+  header {
+    background: #009688;
+    color: white;
+    padding-top: 30px;
+    min-height: 70px;
+    border-bottom: #00695c 3px solid;
+  }
+  header a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 16px;
+  }
+  header ul {
+    padding: 0;
+    list-style: none;
+  }
+  header li {
+    display: inline;
+    padding: 0 20px;
+  }
+  header #branding {
+    float: left;
+  }
+  header #branding h1 {
+    margin: 0;
+  }
+  header nav {
+    float: right;
+    margin-top: 10px;
+  }
+  header .highlight, header .current a {
+    color: #ffc107;
+    font-weight: bold;
+  }
+  header a:hover {
+    color: #ffffff;
+    font-weight: bold;
+  }
+  .projects {
+    padding: 50px 0;
+    background: #009688;
+    color: #ffffff;
+    text-align: center;
+  }
+  .projects h1, .projects p {
+    margin-bottom: 20px;
+  }
+  .project-list {
+    padding: 20px;
+    background: white;
+    border-radius: 5px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  }
+  .project-item {
+    margin-bottom: 30px;
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 20px;
+  }
+  .project-item:last-child {
+    border-bottom: none;
+  }
+  .project-item h3 {
+    color: #333;
+  }
+  .project-item p {
+    color: #666;
+  }
+  .project-status {
+    font-weight: bold;
+    color: #009688;
+  }
+  .project-status.completed {
+    color: #4caf50;
+  }
+  footer {
+    background: #00695d07;
+    color: #ffffff;
+    text-align: center;
+    padding: 10px 0;
+  }
+  @media (max-width: 768px) {
+    header #branding, header nav {
+      float: none;
+      text-align: center;
+    }
+    header nav ul {
+      margin-top: 0;
+    }
+    header li {
+      display: block;
+      padding: 10px;
+    }
+  }
+</style>
+</head>
+<body>
+  <header>
+    <i class="fas fa-bars fa-2x" id="sidebar-toggle"></i>
+          <img src="logo.jpg" alt="Company Logo">
+          <a href=" https://www.facebook.com/profile.php?id=61560745239659&mibextid=ZbWKwL " target="_blank">
+      <i class="fab fa-facebook fa-2x"></i>
+    </a>
+        
+        <div class="nav-bar" id="navi">
+          <a href="javascript:void(0)" class="closebtn" id="closeBtn">&times;</a>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="aboutUs.html">About</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="pictorials.html">Gallery</a></li>
+        <li><a href="contactUs.html">Contacts</a></li>
+            <li><a href="missionn.html">Mission</a></li>
+            <li><a href="vision.html">Vission</a></li>
+            <li><a href="volunteer.html">Volunteer</a></li>
+        <li><a href="donate.html">DONATE</a></li>
+          </ul>
+        </div>
+      </header>
+  <section class="projects">
+    <div class="container">
+      <h1>Our Projects</h1>
+      <div class="project-list">
+        <!-- Completed Project -->
+        <div class="project-item">
+          <h3>Community Health Initiative</h3>
+          <p class="project-status completed">Status: Completed</p>
+          <p>This project focused on improving community health through education and resources.</p>
+        </div>
+        <!-- Ongoing Project -->
+        <div class="project-item">
+          <h3>Sustainable Agriculture Program</h3>
+          <p class="project-status">Status: In Progress</p>
+          <p>Our ongoing efforts to promote sustainable farming practices among local farmers.</p>
+        </div>
+        <!-- Add more projects as needed -->
+      </div>
+    </div>
+  </section>
+
+  <span class="donate" onclick="window.location.href='donate.html'">DONATE</span>
+  <footer>
+    <div class="footer-container">
+      <div class="footer-logo">
+        <img src="logo.jpg" alt="Company Logo">
+      </div>
+      <div class="footer-links">
+        <h3>Useful Links</h3>
+        <ul>
+          <li><a href="index.html">Home</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="missionn.html">Mission</a></li>
+          <li><a href="aboutUs.html">About Us</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="vision.html">Vision</a></li>
+          <li><a href="projects.html">Projects</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="volunteer.html">Volunteer</a></li>
+          <li><a href="contactUs.html">Contact Us</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="pictorials.html">Pictorials</a></li>
+<li><a href="donate.html">DONATE</a></li>
+        </ul>
+      </div>
+      <div class="footer-social">
+        <h3>Follow Us</h3>
+       <a href="https://www.facebook.com/profile.php?id=61560745239659&mibextid=ZbWKwL" target="_blank">
+          <i class="fab fa-facebook"></i>
+        </a>
+        <a href="https://x.com/HopeKokeno_CBO" target="_blank">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/hope-kokeno-cbo-572b02313" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" alt="LinkedIn Logo" style="width:50px;height:50px;">
+    </a>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <p>&copy; 2024. All rights reserved.Developed by JOSEPH SAMWA. samwajoseph8@gmail.com</p>
+    </div>
+  </footer>
+  <script>
+    const bt = document.getElementById("sidebar-toggle");
+   const navi = document.getElementById("navi");
+   const closeBtn = document.getElementById("closeBtn");
+   
+   bt.onclick = function() {
+     navi.style.display = 'block';
+   };
+   
+   closeBtn.onclick = function() {
+     navi.style.display = 'none';
+   };
+ </script>
+</body>
+</html>

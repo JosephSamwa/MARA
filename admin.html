@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+ <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+        header {
+            background: #333;
+            color: #fff;
+            padding-top: 30px;
+            min-height: 70px;
+            border-bottom: #77aaff 3px solid;
+        }
+        header a {
+            color: #fff;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 16px;
+        }
+        header ul {
+            padding: 0;
+            list-style: none;
+            margin: 0;
+        }
+        header li {
+            float: left;
+            display: inline;
+            padding: 0 20px 0 20px;
+        }
+        header #branding {
+            float: left;
+        }
+        header #branding h1 {
+            margin: 0;
+        }
+        header nav {
+            float: right;
+            margin-top: 10px;
+        }
+        table {
+            width: 100%;
+            margin-top: 20px;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        form {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+        form label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        form input, form textarea {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        form input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        form input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+        <header>
+            <i class="fas fa-bars fa-2x" id="sidebar-toggle"></i>
+          <img src="logo.jpg" alt="Company Logo">
+          <a href=" https://www.facebook.com/profile.php?id=61560745239659&mibextid=ZbWKwL " target="_blank">
+      <i class="fab fa-facebook fa-2x"></i>
+    </a>
+        </header>
+        <div class="container">
+            <div id="branding">
+                <h1>Admin Panel</h1>
+            </div>
+        </div>
+        <div class="nav-bar" id="navi">
+          <a href="javascript:void(0)" class="closebtn" id="closeBtn">&times;</a>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="aboutUs.html">About</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="pictorials.html">Gallery</a></li>
+          <li><a href="contactUs.html">Contacts</a></li>
+            <li><a href="mission.hmtl">Mission</a></li>
+            <li><a href="vision.html">Vission</a></li>
+            <li><a href="volunteer.html">Volunteer</a></li>
+          <li><a href="donate.html">DONATE</a></li>
+          </ul>
+        </div>      
+    <div class="container">
+        <h2>Registered Members</h2>
+        <table id="membersTable">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Username</th>
+                    <th>Email</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Members will be loaded here dynamically -->
+            </tbody>
+        </table>
+
+        <h2>Send Message</h2>
+        <form id="messageForm" action="send_message.php" method="post">
+            <label for="user_id">User ID:</label>
+            <input type="text" id="user_id" name="user_id" required>
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required></textarea>
+            <input type="submit" value="Send Message">
+        </form>
+    </div>
+    <footer>
+    <div class="footer-container">
+      <div class="footer-logo">
+        <img src="logo.jpg" alt="Company Logo">
+      </div>
+      <div class="footer-links">
+        <h3>Useful Links</h3>
+        <ul>
+          <li><a href="index.html">Home</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="mission.html">Mission</a></li>
+          <li><a href="aboutUs.html">About Us</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="vision.html">Vision</a></li>
+          <li><a href="projects.html">Projects</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="volunteer.html">Volunteer</a></li>
+          <li><a href="contactUs.html">Contact Us</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="pictorials.html">Pictorials</a></li>
+<a href="donate.html">DONATE</a></li>
+        </ul>
+      </div>
+      <div class="footer-social">
+        <h3>Follow Us</h3>
+       <a href="https://www.facebook.com/profile.php?id=61560745239659&mibextid=ZbWKwL" target="_blank">
+          <i class="fab fa-facebook"></i>
+        </a>
+        <a href="https://www.twitter.com/your-company-page" target="_blank">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a href="https://www.instagram.com/your-company-page" target="_blank">
+          <i class="fab fa-instagram"></i>
+        </a>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <p>&copy; 2024. All rights reserved.Developed by JOSEPH SAMWA. samwajoseph8@gmail.com</p>
+    </div>
+  </footer>
+
+    <script>
+        const bt = document.getElementById("sidebar-toggle");
+       const navi = document.getElementById("navi");
+       const closeBtn = document.getElementById("closeBtn");
+       
+       bt.onclick = function() {
+         navi.style.display = 'block';
+       };
+       
+       closeBtn.onclick = function() {
+         navi.style.display = 'none';
+       };
+     </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            fetch('get_members.php')
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        const membersTable = document.querySelector('#membersTable tbody');
+                        data.members.forEach(member => {
+                            const row = document.createElement('tr');
+                            row.innerHTML = `
+                                <td>${member.id}</td>
+                                <td>${member.username}</td>
+                                <td>${member.email}</td>
+                            `;
+                            membersTable.appendChild(row);
+                        });
+                    } else {
+                        Swal.fire('Error', data.message, 'error');
+                    }
+                })
+                .catch(error => {
+                    Swal.fire('Error', 'An unexpected error occurred', 'error');
+                });
+        });
+
+        document.getElementById('messageForm').onsubmit = function(event) {
+            event.preventDefault(); // Prevent the default form submission
+
+            var form = this;
+            var formData = new FormData(form);
+
+            fetch(form.action, {
+                method: form.method,
+                body: formData
+            }).then(response => response.json())
+              .then(data => {
+                if (data.success) {
+                    Swal.fire('Success', data.message, 'success');
+                    form.reset(); // Reset the form on success
+                } else {
+                    Swal.fire('Error', data.message, 'error');
+                }
+            }).catch(error => {
+                Swal.fire('Error', 'An unexpected error occurred', 'error');
+            });
+        }
+    </script>
+</body>
+</html>

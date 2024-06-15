@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <title>Donate - HOPE KOKENO CBO</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<style>
+  /* CSS styles */
+  body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+  }
+  .container {
+    max-width: 1170px;
+    margin: auto;
+    padding: 0 15px;
+  }
+  .donate-section {
+    padding: 50px 0;
+    background: #009688;
+    color: black;
+    text-align: center;
+  }
+  .donate-section h1 {
+    margin-bottom: 20px;
+  }
+  .donate-form {
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    max-width: 500px;
+    margin: auto;
+  }
+  .donate-form label {
+    display: block;
+    margin-bottom: 10px;
+  }
+  .donate-form input[type="number"],
+  .donate-form button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+  }
+  .donate-form button {
+    background-color: #4caf50;
+    color: black;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+  }
+  .donate-form button:hover {
+    background-color: #45a049;
+  }
+  .payment-methods {
+    text-align: center;
+    margin-top: 30px;
+  }
+  .payment-methods img {
+    width: 100px;
+    margin: 0 10px;
+  }
+  .payment-details {
+    display: none;
+    margin-top: 10px;
+  }
+</style>
+<script>
+  function togglePaymentDetails() {
+    // Hide all payment details
+    var paymentDetails = document.querySelectorAll('.payment-details');
+    paymentDetails.forEach(function(detail) {
+      detail.style.display = 'none';
+    });
+
+    // Show selected payment detail
+    var selectedPaymentMethod = document.querySelector('input[name="payment_method"]:checked').value;
+    document.getElementById(selectedPaymentMethod + '-details').style.display = 'block';
+  }
+
+  function submitDonationForm() {
+    var amount = document.getElementById('amount').value;
+    if (amount) {
+      swal({
+        title: "Confirm Donation",
+        text: "Are you sure you want to donate Ksh " + amount + "?",
+        icon: "warning",
+        buttons: true,
+        dangerMode: true,
+      })
+      .then((willDonate) => {
+        if (willDonate) {
+          swal("Thank you for your generosity!", {
+            icon: "success",
+          });
+          // Here you can also handle the actual form submission.
+          // For example, you might want to submit the form programmatically:
+          // document.querySelector('.donate-form form').submit();
+        } else {
+          swal("Your donation has been cancelled.");
+        }
+      });
+    } else {
+      swal("Please enter an amount to donate.", { icon: "error" });
+    }
+  }
+</script>
+</head>
+<body>
+  <header>
+    <i class="fas fa-bars fa-2x" id="sidebar-toggle"></i>
+    <img src="logo.jpg" alt="Company Logo">
+    <a href=" https://www.facebook.com/profile.php?id=61560745239659&mibextid=ZbWKwL " target="_blank">
+      <i class="fab fa-facebook fa-2x"></i>
+    </a>
+  </header>
+  <div class="nav-bar" id="navi">
+    <a href="javascript:void(0)" class="closebtn" id="closeBtn">&times;</a>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="aboutUs.html">About</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="pictorials.html">Gallery</a></li>
+	<li><a href="contactUs.html">Contacts</a></li>
+      <li><a href="missionn.html">Mission</a></li>
+      <li><a href="vision.html">Vission</a></li>
+      <li><a href="volunteer.html">Volunteer</a></li>
+	<li><a href="donate.html">DONATE</a></li>
+    </ul>
+  </div>
+  <div class="donate-section">
+    <h1>Support Our Course</h1>
+    <p>Your donation can change lives.</p>
+    <div class="donate-form">
+      <form action="process-donation.php" method="POST" onsubmit="event.preventDefault(); submitDonationForm();">
+        <label for="amount">Donation Amount:</label>
+        <input type="number" id="amount" name="amount" placeholder="Enter Amount in Ksh" required>
+Choose your payment method.
+        <div>
+          <input type="radio" id="mpesa" name="payment_method" value="mpesa" onclick="togglePaymentDetails()">
+          <label for="mpesa">M-Pesa</label>
+        </div>
+        <div>
+          <input type="radio" id="paypal" name="payment_method" value="paypal" onclick="togglePaymentDetails()">
+          <label for="paypal">PayPal</label>
+        </div>
+        <div>
+          <input type="radio" id="airtel_money" name="payment_method" value="airtel_money" onclick="togglePaymentDetails()">
+          <label for="airtel_money">Airtel Money</label>
+        </div>
+        <div id="mpesa-details" class="payment-details">
+          <p>Please send your donation to M-Pesa number: +254752722538</p>
+        </div>
+        <div id="paypal-details" class="payment-details">
+          <p>Use our PayPal email: hopekokeno.cbo@gmail.com</p>
+        </div>
+        <div id="credit_card-details" class="payment-details">
+          <p>Enter your credit card information below:</p>
+          <!-- Credit card form fields -->
+        </div>
+        <div id="airtel_money-details" class="payment-details">
+          <p>Please send your donation to Airtel Money number: +254752722538</p>
+        </div>
+        <button type="submit">Donate Now</button>
+      </form>
+    </div>
+  </div>
+  <span class="donate" onclick="window.location.href='donate.html'">DONATE</span>
+  <footer>
+    <div class="footer-container">
+      <div class="footer-logo">
+        <img src="logo.jpg" alt="Company Logo">
+      </div>
+      <div class="footer-links">
+        <h3>Useful Links</h3>
+        <ul>
+          <li><a href="index.html">Home</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="missionn.html">Mission</a></li>
+          <li><a href="aboutUs.html">About Us</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="vision.html">Vision</a></li>
+          <li><a href="projects.html">Projects</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="volunteer.html">Volunteer</a></li>
+          <li><a href="contactUs.html">Contact Us</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="pictorials.html">Pictorials</a></li>
+        </ul>
+      </div>
+      <div class="footer-social">
+        <h3>Follow Us</h3>
+        <a href="https://www.facebook.com/profile.php?id=61560745239659&mibextid=ZbWKwL" target="_blank">
+          <i class="fab fa-facebook"></i>
+        </a>
+        <a href="https://x.com/HopeKokeno_CBO" target="_blank">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/hope-kokeno-cbo-572b02313" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" alt="LinkedIn Logo" style="width:50px;height:50px;">
+    </a>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <p>&copy; 2024. All rights reserved.Developed by JOSEPH SAMWA. samwajoseph8@gmail.com</p>
+    </div>
+  </footer>
+  <script>
+    const bt = document.getElementById("sidebar-toggle");
+   const navi = document.getElementById("navi");
+   const closeBtn = document.getElementById("closeBtn");
+   
+   bt.onclick = function() {
+     navi.style.display = 'block';
+   };
+   
+   closeBtn.onclick = function() {
+     navi.style.display = 'none';
+   };
+ </script>
+</body>
+</html>

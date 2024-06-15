@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+ <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<title>Our Team - HOPE KOKENO CBO</title>
+<link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
+<style>
+  /* CSS styles */
+  body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+  }
+  .container {
+    max-width: 1170px;
+    margin: auto;
+    padding: 0 15px;
+  }
+  header {
+    background: #009688;
+    color: white;
+    padding-top: 30px;
+    min-height: 70px;
+    border-bottom: #00695c 3px solid;
+  }
+  header a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 16px;
+  }
+  header ul {
+    padding: 0;
+    list-style: none;
+  }
+  header li {
+    display: inline;
+    padding: 0 20px;
+  }
+  header #branding {
+    float: left;
+  }
+  header #branding h1 {
+    margin: 0;
+  }
+  header nav {
+    float: right;
+    margin-top: 10px;
+  }
+  header .highlight, header .current a {
+    color: #ffc107;
+    font-weight: bold;
+  }
+  header a:hover {
+    color: #ffffff;
+    font-weight: bold;
+  }
+  .team {
+    padding: 50px 0;
+    background: #009688;
+    color: #ffffff;
+    text-align: center;
+  }
+  .team h1 {
+    margin-bottom: 20px;
+  }
+  .team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-gap: 20px;
+    padding: 20px;
+    background: white;
+    border-radius: 5px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  }
+  .team-member {
+    text-align: center;
+    padding: 10px;
+  }
+  .team-member img {
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+  }
+  .team-member h3 {
+    color: #333;
+    margin: 10px 0;
+  }
+  .team-member p {
+    color: #666;
+  }
+  footer {
+    background: hsl(174, 12%, 84%);
+    color: #ffffff;
+    text-align: center;
+    padding: 10px 0;
+  }
+  @media (max-width: 768px) {
+    header #branding, header nav {
+      float: none;
+      text-align: center;
+    }
+    header nav ul {
+      margin-top: 0;
+    }
+    header li {
+      display: block;
+      padding: 10px;
+    }
+    .team-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+</head>
+<body>
+  <header>
+    <i class="fas fa-bars fa-2x" id="sidebar-toggle"></i>
+    <img src="logo.jpg" alt="Company Logo">
+    <a href=" https://www.facebook.com/profile.php?id=61560745239659&mibextid=ZbWKwL " target="_blank">
+      <i class="fab fa-facebook fa-2x"></i>
+    </a>
+  </header> 
+  <h1>HOPE KOKENO CBO</h1>
+  <div class="nav-bar" id="navi">
+    <a href="javascript:void(0)" class="closebtn" id="closeBtn">&times;</a>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="aboutUs.html">About</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="pictorials.html">Gallery</a></li>
+	<li><a href="contactUs.html">Contacts</a></li>
+      <li><a href="missionn.html">Mission</a></li>
+      <li><a href="vision.html">Vission</a></li>
+      <li><a href="volunteer.html">Volunteer</a></li>
+	<li><a href="donate.html">DONATE</a></li>
+    </ul>
+  </div>
+
+  <section class="team">
+    <div class="container">
+      <h1>Meet Our Team</h1>
+      <div class="team-grid">
+        <!-- Team Member 1 -->
+        <div class="team-member">
+          <img src="chairman.jpg" alt="chairman">
+          <h3>MABUS CHARLES OKOMBO</h3>
+          <p>Chairperson</p>
+        </div>
+        <!-- Team Member 2 -->
+        <div class="team-member">
+          <img src="logo.jpg" alt="Tresurer">
+          <h3>LILIAN ACHIENG' ONDIGO</h3>
+          <p>Tresurer</p>
+        </div>
+        <!-- Team Member 1 -->
+        <div class="team-member">
+          <img src="logo.jpg" alt="secretary">
+          <h3>JUNIOR OTIENO</h3>
+          <p>Secretary</p>
+        </div>
+        <!-- Add more team members as needed -->
+      </div>
+    </div>
+  </section>
+
+  <span class="donate" onclick="window.location.href='donate.html'">DONATE</span>
+  <footer>
+    <div class="footer-container">
+      <div class="footer-logo">
+        <img src="logo.jpg" alt="Company Logo">
+      </div>
+      <div class="footer-links">
+        <h3>Useful Links</h3>
+        <ul>
+          <li><a href="index.html">Home</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="missionn.html">Mission</a></li>
+          <li><a href="aboutUs.html">About Us</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="vision.html">Vision</a></li>
+          <li><a href="projects.html">Projects</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="volunteer.html">Volunteer</a></li>
+          <li><a href="contactUs.html">Contact Us</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="pictorials.html">Pictorials</a></li>
+<li><a href="donate.html">DONATE</a></li>
+        </ul>
+      </div>
+      <div class="footer-social">
+        <h3>Follow Us</h3>
+       <a href="https://www.facebook.com/profile.php?id=61560745239659&mibextid=ZbWKwL" target="_blank">
+          <i class="fab fa-facebook"></i>
+        </a>
+        <a href="https://x.com/HopeKokeno_CBO" target="_blank">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/hope-kokeno-cbo-572b02313" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" alt="LinkedIn Logo" style="width:50px;height:50px;">
+    </a>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <p>&copy; 2024. All rights reserved.Developed by JOSEPH SAMWA. samwajoseph8@gmail.com</p>
+    </div>
+  </footer>
+  <script>
+    const bt = document.getElementById("sidebar-toggle");
+   const navi = document.getElementById("navi");
+   const closeBtn = document.getElementById("closeBtn");
+   
+   bt.onclick = function() {
+     navi.style.display = 'block';
+   };
+   
+   closeBtn.onclick = function() {
+     navi.style.display = 'none';
+   };
+ </script>
+</body>
+</html>
