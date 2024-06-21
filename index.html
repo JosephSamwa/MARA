@@ -1,192 +1,158 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
-  <link rel="stylesheet" href="style.css">
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <title>HOPE KOKENO-CBO</title>
-  <!-- Include Bootstrap for responsive design and pre-designed components -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <!-- Include Font Awesome for icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-  <style>
-      body {
-          font-family: 'Open Sans', sans-serif; /* Use Google Fonts */
-          margin: 0;
-          padding: 0;
-          background-color: #f8f9fa; /* Light background for better readability */
-      }
-      header {
-          display: flex;
-      }
-      .navbar {
-          background-color: #007bff; /* Consistent color scheme */
-      }
-      .navbar-brand {
-          color: #fff;
-      }
-      .navbar-nav .nav-link {
-          color: #fff;
-      }
-      .btn-main {
-          background-color: #007bff;
-          color: #fff;
-          border-radius: 5px;
-          padding: 10px 20px;
-          transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 20px;
         }
-      .btn-main:hover {
-          background-color: #0056b3;
-      }
-      .section-padding {
-          padding: 40px 0; /* More padding for each section */
-      }
-      .footer {
-          background-color: #007bff;
-          color: #fff;
-          padding: 10px;
-          text-align: center;
-      }
-      .donate{
-        align-items: center;
-        align-self: start;
-        align-content: center;
-        width: fit-content;
-      }
-      .content{
-        text-align: center;
-        align-items: center;
-        align-self: start;
-        align-content: center;
-        width: fit-content;
-      }
-      .container{
-        text-align: center;
-        align-items: center;
-        align-self: start;
-        align-content: center;
-        width: fit-content;
-      }
-      .sect{
-        text-align: center;
-        align-items: center;
-        align-self: start;
-        align-content: center;
-      }
-  </style>
+        h2 {
+            color: #333;
+            text-align: center;
+        }
+        .form-container {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .form-container h3 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .form-container div {
+            margin-bottom: 15px;
+        }
+        .form-container label {
+            display: block;
+            margin-bottom: 5px;
+            color: #333;
+        }
+        .form-container input, .form-container select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        .form-container button {
+            width: 100%;
+            padding: 15px;
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .form-container button:hover {
+            background-color: #218838;
+        }
+    </style>
 </head>
-  <body>
-  <header>
-    <i class="fas fa-bars fa-2x" id="sidebar-toggle"></i>
-    <img src="logo.jpg" alt="Company Logo">
-    <a href=" https://www.facebook.com/profile.php?id=61560745239659&mibextid=ZbWKwL " target="_blank">
-      <i class="fab fa-facebook fa-2x"></i>
-    </a>
-  </header>
-  <div class="nav-bar" id="navi">
-    <a href="javascript:void(0)" class="closebtn" id="closeBtn">&times;</a>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="aboutUs.html">About</a></li>
-      <li><a href="projects.html">Projects</a></li>
-      <li><a href="pictorials.html">Gallery</a></li>
-	<li><a href="contactUs.html">Contacts</a></li>
-      <li><a href="missionn.html">Mission</a></li>
-      <li><a href="vision.html">Vission</a></li>
-      <li><a href="volunteer.html">Volunteer</a></li>
-	<li><a href="donate.html">DONATE</a></li>
-    </ul>
-  </div>
-    <main id="content">
-        <!-- Hero Section -->
-        <div class="jumbotron jumbotron-fluid text-center section-padding">
-              <h1 class="display-4">HOPE KOKENO CBO</h1>
+<body>
+    <h2>Register</h2>
+    <div class="form-container" id="registerForm">
+        <form id="registrationForm">
+            <h3>Register New Member</h3>
+            <div>
+                <label for="fullName">Full Name</label>
+                <input type="text" id="fullName" required>
             </div>
-              <!-- About Us Section2 -->
-            <section class="sect">
-                <div class="containerr">
-                  <h2 class="display-4">Your Support Can Improve Lives</h2>
-                  <p class="lead">Be a blessing to enable these families to get better houses.</p>
-                  <a href="donate.html" class="btn btn-main">Donate</a>
-              </div>
-              </section>
-            
-            <!-- About Us Section -->
-        <section id="about" class="section-padding">
-            <div class="container">
-                <h2>About Us</h2>
-                <p>Welcome to HOPE KOKENO Community-Based Organization (C.B.O)! Our organization was established with a heartfelt commitment to uplifting the lives of the less fortunate in Gwassi North Ward, Suba Sub County, HomaBay County, Kenya.</p>
-                <a href="aboutUs.html" class="btn btn-main">Read More</a>
+            <div>
+                <label for="email">Email</label>
+                <input type="email" id="email" required>
             </div>
-        </section>
-
-        <!-- Mission Section -->
-        <section id="mission" class="section-padding">
-            <div class="container">
-                <h2>Mission</h2>
-                <p>To empower and uplift impoverished households in Gwassi North Ward, Suba Sub County, HomaBay County, Kenya. We are dedicated to providing support, resources, and opportunities to the most vulnerable members of our community, particularly those affected by HIV/AIDS and widowed individuals.</p>
+            <div>
+                <label for="phoneNumber">Phone Number (WhatsApp)</label>
+                <input type="number" id="phoneNumber" required>
             </div>
-        </section>
-
-        <!-- Vision Section -->
-        <section id="vision" class="section-padding">
-            <div class="container">
-                <h2>Vision</h2>
-                <p>To create a thriving and self-sufficient community in Gwassi North Ward, where every household has access to opportunities for growth, prosperity, and well-being. We envision a society where vulnerable households are empowered with the knowledge, resources, and support they need to overcome challenges and build sustainable livelihoods.</p>
+            <div>
+                <label for="gender">Gender</label>
+                <select id="gender" required>
+                    <option value="">Select Gender</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Other">Other</option>
+                </select>
             </div>
-        </section>
-      </main>
-        <!-- Footer -->
-        <button class="donate" onclick="window.location.href='donate.html'">DONATE</button>
-  <footer>
-    <div class="footer-container">
-      <div class="footer-logo">
-        <img src="logo.jpg" alt="Company Logo">
-      </div>
-      <div class="footer-links">
-        <h3>Useful Links</h3>
-        <ul>
-          <li><a href="index.html">Home</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="missionn.html">Mission</a></li>
-          <li><a href="aboutUs.html">About Us</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="vision.html">Vision</a></li>
-          <li><a href="projects.html">Projects</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="volunteer.html">Volunteer</a></li>
-          <li><a href="contactUs.html">Contact Us</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="pictorials.html">Pictorials</a></li>
-        </ul>
-      </div>
-      <div class="footer-social">
-        <h3>Follow Us</h3>
-        <a href="https://www.facebook.com/profile.php?id=61560745239659&mibextid=ZbWKwL" target="_blank">
-          <i class="fab fa-facebook"></i>
-        </a>
-        <a href="https://x.com/HopeKokeno_CBO" target="_blank">
-          <i class="fab fa-twitter"></i>
-        </a>
-        <a href="https://www.linkedin.com/in/hope-kokeno-cbo-572b02313" target="_blank">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" alt="LinkedIn Logo" style="width:50px;height:50px;">
-    </a>
-      </div>
+            <button type="submit">Register</button>
+        </form>
     </div>
-    <div class="footer-copyright">
-      <p>&copy; 2024. All rights reserved.Developed by JOSEPH SAMWA. samwajoseph8@gmail.com</p>
-    </div>
-  </footer>
-    <!-- Include Bootstrap's JavaScript -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script>
-      const bt = document.getElementById("sidebar-toggle");
-     const navi = document.getElementById("navi");
-     const closeBtn = document.getElementById("closeBtn");
-     
-     bt.onclick = function() {
-       navi.style.display = 'block';
-     };
-     
-     closeBtn.onclick = function() {
-       navi.style.display = 'none';
-     };
-   </script>
-  </body>
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+        import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+        import Swal from "https://cdn.jsdelivr.net/npm/sweetalert2@11";
+
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyBm6y0gH2Onwl7fnGuum-7dg9i_6BdRsxk",
+            authDomain: "kokeno-cbo.firebaseapp.com",
+            projectId: "kokeno-cbo",
+            storageBucket: "kokeno-cbo.appspot.com",
+            messagingSenderId: "705645978445",
+            appId: "1:705645978445:web:6780cc184f40f072d74d04",
+            measurementId: "G-KWM8TBVL5S"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+
+        // Handle form submission
+        document.getElementById('registrationForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const fullName = document.getElementById('fullName').value;
+            const email = document.getElementById('email').value;
+            const phoneNumber = document.getElementById('phoneNumber').value;
+            const gender = document.getElementById('gender').value;
+
+            // Add user data to Firestore
+            addUserToFirestore(fullName, email, phoneNumber, gender);
+        });
+
+        // Function to add user data to Firestore
+        function addUserToFirestore(fullName, email, phoneNumber, gender) {
+            const newUser = {
+                fullName,
+                email,
+                phoneNumber,
+                gender
+            };
+
+            addDoc(collection(db, 'users'), newUser)
+                .then(() => {
+                    // Success message
+                    Swal.fire({
+                        title: 'Success!',
+                        text: 'User registered successfully',
+                        icon: 'success',
+                        confirmButtonText: 'OK'
+                    });
+                    document.getElementById('registrationForm').reset();
+                })
+                .catch((error) => {
+                    // Error message
+                    console.error("Error registering user: ", error);
+                    Swal.fire({
+                        title: 'Error!',
+                        text: `Error registering user: ${error.message}`,
+                        icon: 'error',
+                        confirmButtonText: 'OK'
+                    });
+                });
+        }
+    </script>
+</body>
 </html>
